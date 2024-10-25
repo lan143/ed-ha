@@ -1,7 +1,7 @@
 {
     "name": "ed-ha",
     "keywords": "iot, home, automation, esp32",
-    "description": "",
+    "description": "Home assistant mqtt discovery implementation for embedded devices",
     "authors":
     {
       "name": "Artem Kravchenko",
