@@ -2,10 +2,10 @@
 
 #include <Arduino.h>
 #include <ArduinoJson.h>
+#include <ExtStrings.h>
 #include "device.h"
 #include "enum/device_class.h"
 #include "enum/entity_category.h"
-#include "utils/ext_strings.h"
 
 namespace EDHA
 {
@@ -24,7 +24,7 @@ namespace EDHA
 
         std::string getTopicName() const
         {
-            return formatString("%s/%s/%s/%s/config", _prefix.c_str(), _type.c_str(), _uniqueID.c_str(), _objectID.c_str());
+            return EDUtils::formatString("%s/%s/%s/%s/config", _prefix.c_str(), _type.c_str(), _uniqueID.c_str(), _objectID.c_str());
         }
 
         Base* setName(std::string name)

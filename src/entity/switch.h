@@ -2,9 +2,9 @@
 
 #include <Arduino.h>
 #include <ArduinoJSON.h>
+#include <ExtStrings.h>
 #include "device.h"
 #include "base_entity.h"
-#include "utils/ext_strings.h"
 
 namespace EDHA
 {
