@@ -3,8 +3,11 @@
 #include "discovery.h"
 #include "enum/entity_category.h"
 
-void EDHA::DiscoveryMgr::init(SendFunction fn)
+void EDHA::DiscoveryMgr::init(std::string discoveryPrefix, bool sendEnabled, SendFunction fn)
 {
+    _discoveryPrefix = discoveryPrefix;
+    _sendEnabled = sendEnabled;
+
     _isSend = false;
     _lastSendTime = 0;
     _sendFunction = fn;

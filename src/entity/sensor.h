@@ -3,7 +3,7 @@
 #include <Arduino.h>
 #include <ArduinoJSON.h>
 #include "base_entity.h"
-#include "ha/enum/sensor_state_class.h"
+#include "enum/sensor_state_class.h"
 
 namespace EDHA
 {

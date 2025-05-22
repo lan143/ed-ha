@@ -3,8 +3,8 @@
 #include <Arduino.h>
 #include <ArduinoJson.h>
 #include "device.h"
-#include "ha/enum/device_class.h"
-#include "ha/enum/entity_category.h"
+#include "enum/device_class.h"
+#include "enum/entity_category.h"
 #include "utils/ext_strings.h"
 
 namespace EDHA

@@ -15,10 +15,7 @@ namespace EDHA
     class DiscoveryMgr
     {
     public:
-        DiscoveryMgr(
-            std::string discoveryPrefix,
-            bool sendEnabled
-        ) : _discoveryPrefix(discoveryPrefix), _sendEnabled(sendEnabled) {
+        DiscoveryMgr() {
             _isSend = false;
             _lastSendTime = 0;
         }
@@ -30,7 +27,7 @@ namespace EDHA
             return &_devices[_devices.size()-1];
         }
 
-        void init(SendFunction fn);
+        void init(std::string discoveryPrefix, bool sendEnabled, SendFunction fn);
         void loop();
 
     public:
