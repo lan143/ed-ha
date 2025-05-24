@@ -4,6 +4,7 @@
 #include <vector>
 #include "entity/device.h"
 #include "entity/base_entity.h"
+#include "entity/cover.h"
 #include "entity/light.h"
 #include "entity/sensor.h"
 #include "entity/switch.h"
@@ -31,6 +32,29 @@ namespace EDHA
         void loop();
 
     public:
+        Cover* addCover(
+            Device* device,
+            std::string name,
+            std::string objectID,
+            std::string uniqueID
+        ) {
+            if (device == NULL && _devices.size() > 0) {
+                device = &_devices[_devices.size()-1];
+            }
+
+            Cover* obj = new Cover(
+                device,
+                _discoveryPrefix,
+                objectID,
+                uniqueID
+            );
+            obj->setName(name);
+
+            _entities.push_back(obj);
+
+            return obj;
+        }
+
         Light* addLight(
             Device* device,
             std::string name,
