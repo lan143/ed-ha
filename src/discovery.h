@@ -4,6 +4,7 @@
 #include <vector>
 #include "entity/device.h"
 #include "entity/base_entity.h"
+#include "entity/binary_sensor.h"
 #include "entity/button.h"
 #include "entity/climate.h"
 #include "entity/cover.h"

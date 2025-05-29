@@ -20,7 +20,7 @@ namespace EDHA
             std::string uniqueID
         ) : Base(device, "cover", prefix, objectID, uniqueID) { }
 
-        Cover* setDeviceClass(std::string deviceClass)
+        Cover* setDeviceClass(DeviceClass* deviceClass)
         {
             _deviceClass = deviceClass;
             return this;
@@ -65,7 +65,7 @@ namespace EDHA
         std::string marshalJSON() override;
 
     private:
-        std::string _deviceClass = "";
+        DeviceClass* _deviceClass = NULL;
         std::string _commandTopic = "";
         std::string _stateTopic = "";
         std::string _valueTemplate = "";

@@ -6,7 +6,7 @@ std::string EDHA::Cover::marshalJSON()
     return EDUtils::buildJson([this](JsonObject entity) {
         buildBaseField(entity);
 
-        if (_deviceClass.length() > 0) {
+        if (_deviceClass) {
             entity[F("device_class")] = _deviceClass;
         }
 

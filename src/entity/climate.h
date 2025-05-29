@@ -2,15 +2,15 @@
 
 #include <Arduino.h>
 #include <list>
-#include "base.h"
+#include "base_entity.h"
 #include "enum/modes.h"
 
 namespace EDHA
 {
-    class Climate : Base
+    class Climate : public Base
     {
     public:
-    Climate(
+        Climate(
             Device* device,
             std::string prefix,
             std::string objectID,
@@ -115,7 +115,7 @@ namespace EDHA
         float _minTemp;
         float _maxTemp;
         std::string _modeCommandTemplate = "";
-        std::string _modeCommandTopic = ""
+        std::string _modeCommandTopic = "";
         std::string _modeStateTemplate = "";
         std::string _modeStateTopic = "";
         std::string _temperatureCommandTemplate = "";

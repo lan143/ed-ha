@@ -1,12 +1,12 @@
 #pragma once
 
 #include <Arduino.h>
-#include "base.h"
+#include "base_entity.h"
 #include "enum/device_class.h"
 
 namespace EDHA
 {
-    class BinarySensor : Base
+    class BinarySensor : public Base
     {
     public:
         BinarySensor(
@@ -18,7 +18,7 @@ namespace EDHA
     
         std::string marshalJSON();
     
-        BinarySensor* setDeviceClass(DeviceClass deviceClass)
+        BinarySensor* setDeviceClass(DeviceClass* deviceClass)
         {
             _deviceClass = deviceClass;
             return this;
@@ -49,7 +49,7 @@ namespace EDHA
         }
     
     private:
-        DeviceClass _deviceClass = NULL;
+        DeviceClass* _deviceClass = NULL;
         std::string _stateTopic = "";
         std::string _valueTemplate = "";
         std::string _payloadOn = "";

@@ -2,12 +2,12 @@
 
 #include <Arduino.h>
 #include <list>
-#include "base.h"
+#include "base_entity.h"
 #include "enum/modes.h"
 
 namespace EDHA
 {
-    class WaterHeater : Base
+    class WaterHeater : public Base
     {
     public:
         WaterHeater(

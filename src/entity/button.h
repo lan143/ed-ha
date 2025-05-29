@@ -1,15 +1,15 @@
 #pragma once
 
 #include <Arduino.h>
-#include "base.h"
+#include "base_entity.h"
 #include "enum/device_class.h"
 
 namespace EDHA
 {
-    class Button : Base
+    class Button :public Base
     {
     public:
-        Cover(
+        Button(
             Device* device,
             std::string prefix,
             std::string objectID,
@@ -18,32 +18,32 @@ namespace EDHA
 
         std::string marshalJSON();
     
-        Cover* setDeviceClass(DeviceClass deviceClass)
+        Button* setDeviceClass(DeviceClass* deviceClass)
         {
             _deviceClass = deviceClass;
             return this;
         }
     
-        Cover* setCommandTopic(std::string commandTopic)
+        Button* setCommandTopic(std::string commandTopic)
         {
             _commandTopic = commandTopic;
             return this;
         }
     
-        Cover* setCommandTemplate(std::string commandTemplate)
+        Button* setCommandTemplate(std::string commandTemplate)
         {
             _commandTemplate = commandTemplate;
             return this;
         }
     
-        Cover* setPayloadPress(std::string payloadPress)
+        Button* setPayloadPress(std::string payloadPress)
         {
             _payloadPress = payloadPress;
             return this;
         }
     
     private:
-        DeviceClass _deviceClass = NULL;
+        DeviceClass* _deviceClass = NULL;
         std::string _commandTopic = "";
         std::string _commandTemplate = "";
         std::string _payloadPress = "";
