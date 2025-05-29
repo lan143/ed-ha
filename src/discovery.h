@@ -4,10 +4,13 @@
 #include <vector>
 #include "entity/device.h"
 #include "entity/base_entity.h"
+#include "entity/button.h"
+#include "entity/climate.h"
 #include "entity/cover.h"
 #include "entity/light.h"
 #include "entity/sensor.h"
 #include "entity/switch.h"
+#include "entity/water_heater.h"
 
 namespace EDHA
 {
@@ -32,6 +35,75 @@ namespace EDHA
         void loop();
 
     public:
+        BinarySensor* addBinarySensor(
+            Device* device,
+            std::string name,
+            std::string objectID,
+            std::string uniqueID
+        ) {
+            if (device == NULL && _devices.size() > 0) {
+                device = &_devices[_devices.size()-1];
+            }
+
+            BinarySensor* obj = new BinarySensor(
+                device,
+                _discoveryPrefix,
+                objectID,
+                uniqueID
+            );
+            obj->setName(name);
+
+            _entities.push_back(obj);
+
+            return obj;
+        }
+
+        Button* addButton(
+            Device* device,
+            std::string name,
+            std::string objectID,
+            std::string uniqueID
+        ) {
+            if (device == NULL && _devices.size() > 0) {
+                device = &_devices[_devices.size()-1];
+            }
+
+            Button* obj = new Button(
+                device,
+                _discoveryPrefix,
+                objectID,
+                uniqueID
+            );
+            obj->setName(name);
+
+            _entities.push_back(obj);
+
+            return obj;
+        }
+
+        Climate* addClimate(
+            Device* device,
+            std::string name,
+            std::string objectID,
+            std::string uniqueID
+        ) {
+            if (device == NULL && _devices.size() > 0) {
+                device = &_devices[_devices.size()-1];
+            }
+
+            Climate* obj = new Climate(
+                device,
+                _discoveryPrefix,
+                objectID,
+                uniqueID
+            );
+            obj->setName(name);
+
+            _entities.push_back(obj);
+
+            return obj;
+        }
+
         Cover* addCover(
             Device* device,
             std::string name,
@@ -112,6 +184,29 @@ namespace EDHA
             }
 
             Switch* obj = new Switch(
+                device,
+                _discoveryPrefix,
+                objectID,
+                uniqueID
+            );
+            obj->setName(name);
+
+            _entities.push_back(obj);
+
+            return obj;
+        }
+
+        WaterHeater* addWaterHeater(
+            Device* device,
+            std::string name,
+            std::string objectID,
+            std::string uniqueID
+        ) {
+            if (device == NULL && _devices.size() > 0) {
+                device = &_devices[_devices.size()-1];
+            }
+
+            WaterHeater* obj = new WaterHeater(
                 device,
                 _discoveryPrefix,
                 objectID,
