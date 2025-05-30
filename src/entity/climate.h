@@ -108,6 +108,18 @@ namespace EDHA
             _payloadOn = payloadOn;
             return this;
         }
+
+        Climate* setActionTemplate(std::string actionTemplate)
+        {
+            _actionTemplate = actionTemplate;
+            return this;
+        }
+
+        Climate* setActionTopic(std::string actionTopic)
+        {
+            _actionTopic = actionTopic;
+            return this;
+        }
     
     private:
         std::string _currentTemperatureTemplate = "";
@@ -125,5 +137,7 @@ namespace EDHA
         std::list<Mode> _modes;
         std::string _payloadOff = "";
         std::string _payloadOn = "";
-    };    
+        std::string _actionTemplate = "";
+        std::string _actionTopic = "";
+    };
 }

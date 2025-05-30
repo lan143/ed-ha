@@ -81,5 +81,13 @@ std::string EDHA::Climate::marshalJSON()
         if (_payloadOn.length() > 0) {
             entity[F("payload_on")] = _payloadOn;
         }
+
+        if (_actionTemplate.length() > 0) {
+            entity[F("action_template")] = _actionTemplate;
+        }
+
+        if (_actionTopic.length() > 0) {
+            entity[F("action_topic")] = _actionTopic;
+        }
     });
 }
