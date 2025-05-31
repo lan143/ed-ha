@@ -46,24 +46,30 @@ std::string EDHA::WaterHeater::marshalJSON()
             entity[F("temperature_command_topic")] = _temperatureCommandTopic;
         }
 
-        if (_modes.size()) {
+        if (_modes.size() > 0) {
             JsonArray modes = entity.createNestedArray(F("modes"));
-            int i = 0;
+
             for (auto mode : _modes) {
                 switch (mode) {
                 case MODE_OFF:
-                    modes[i] = "off";
+                    modes.add("off");
                     break;
                 case MODE_HEAT:
-                    modes[i] = "heat";
+                    modes.add("heat");
                     break;
                 case MODE_GAS:
-                    modes[i] = "gas";
+                    modes.add("gas");
                     break;
                 }
-                
-                i++;
             }
+        }
+
+        if (_initial > 0) {
+            entity[F("initial")] = _initial;
+        }
+
+        if (_precision > 0) {
+            entity[F("precision")] = _precision;
         }
     });
 }

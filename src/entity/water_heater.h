@@ -84,6 +84,18 @@ namespace EDHA
             _modes = modes;
             return this;
         }
+
+        WaterHeater* setInitial(int initial)
+        {
+            _initial = initial;
+            return this;
+        }
+
+        WaterHeater* setPrecision(float precision)
+        {
+            _precision = precision;
+            return this;
+        }
     
     private:
         std::string _modeCommandTemplate = "";
@@ -92,10 +104,12 @@ namespace EDHA
         std::string _modeStateTopic = "";
         std::string _currentTemperatureTemplate = "";
         std::string _currentTemperatureTopic = "";
-        float _minTemp;
-        float _maxTemp;
+        float _minTemp = 0.0f;
+        float _maxTemp = 0.0f;
         std::string _temperatureCommandTemplate = "";
         std::string _temperatureCommandTopic = "";
         std::list<Mode> _modes;
+        int _initial = 0;
+        float _precision = 0;
     };    
 }
