@@ -110,6 +110,6 @@ namespace EDHA
         std::string _temperatureCommandTopic = "";
         std::list<Mode> _modes;
         int _initial = 0;
-        float _precision = 0;
+        float _precision = 0.0f;
     };    
 }

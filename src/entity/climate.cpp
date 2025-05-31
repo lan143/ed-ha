@@ -58,16 +58,9 @@ std::string EDHA::Climate::marshalJSON()
             JsonArray modes = entity.createNestedArray(F("modes"));
 
             for (auto mode : _modes) {
-                switch (mode) {
-                case MODE_OFF:
-                    modes.add("off");
-                    break;
-                case MODE_HEAT:
-                    modes.add("heat");
-                    break;
-                case MODE_GAS:
-                    modes.add("gas");
-                    break;
+                std::string sMode = mapMode(mode);
+                if (sMode.length() > 0) {
+                    modes.add(sMode);
                 }
             }
         }
