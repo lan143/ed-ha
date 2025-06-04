@@ -9,6 +9,7 @@ namespace EDHA
     // Binary sensor
     const DeviceClass deviceClassBinarySensorProblem[] = "problem";
     const DeviceClass deviceClassBinarySensorHeat[] = "heat";
+    const DeviceClass deviceClassBinarySensorMotion[] = "motion";
 
     // Button
     const DeviceClass deviceClassButtonRestart[] = "restart";
