@@ -27,5 +27,9 @@ namespace EDHA
     const DeviceClass deviceClassCoverWindow[] = "window";
 
     // Sensor
+    const DeviceClass deviceClassSensorAQI[] = "aqi";
+    const DeviceClass deviceClassSensorHumidity[] = "humidity";
+    const DeviceClass deviceClassSoundPressure[] = "sound_pressure";
     const DeviceClass deviceClassSensorPowerFactor[] = "power_factor";
+    const DeviceClass deviceClassSensorTemperature[] = "temperature";
 }
