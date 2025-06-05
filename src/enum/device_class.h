@@ -7,9 +7,11 @@ namespace EDHA
     typedef const char DeviceClass;
 
     // Binary sensor
+    const DeviceClass deviceClassBinarySensorDoor[] = "door";
     const DeviceClass deviceClassBinarySensorProblem[] = "problem";
     const DeviceClass deviceClassBinarySensorHeat[] = "heat";
     const DeviceClass deviceClassBinarySensorMotion[] = "motion";
+    const DeviceClass deviceClassBinarySensorWindow[] = "window";
 
     // Button
     const DeviceClass deviceClassButtonRestart[] = "restart";
