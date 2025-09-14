@@ -57,5 +57,23 @@ std::string EDHA::Light::marshalJSON()
         if (_rgbValueTemplate.length() > 0) {
             entity[F("rgb_value_template")] = _rgbValueTemplate;
         }
+
+        if (_colorTempCommandTemplate.length() > 0) {
+            entity[F("color_temp_command_template")] = _colorTempCommandTemplate;
+        }
+
+        if (_colorTempCommandTopic.length() > 0) {
+            entity[F("color_temp_command_topic")] = _colorTempCommandTopic;
+        }
+
+        entity[F("color_temp_kelvin")] = _colorTempKelvin;
+
+        if (_colorTempStateTopic.length() > 0) {
+            entity[F("color_temp_state_topic")] = _colorTempStateTopic;
+        }
+
+        if (_colorTempValueTemplate.length() > 0) {
+            entity[F("color_temp_value_template")] = _colorTempValueTemplate;
+        }
     });
 }
