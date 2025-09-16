@@ -40,6 +40,12 @@ namespace EDHA
             return this;
         }
 
+        Light* setBrightnessScale(uint8_t scale)
+        {
+            _brightnessScale = scale;
+            return this;
+        }
+
         Light* setStateTopic(std::string stateTopic)
         {
             _stateTopic = stateTopic;
@@ -129,6 +135,7 @@ namespace EDHA
         std::string _brightnessValueTemplate = "";
         std::string _brightnessCommandTopic = "";
         std::string _brightnessCommandTemplate = "";
+        uint8_t _brightnessScale = 255;
         std::string _stateTopic = "";
         std::string _stateValueTemplate;
         std::string _commandTopic = "";

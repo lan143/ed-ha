@@ -22,6 +22,10 @@ std::string EDHA::Light::marshalJSON()
             entity[F("brightness_command_template")] = _brightnessCommandTemplate;
         }
 
+        if (_brightnessScale > 0) {
+            entity[F("brightness_scale")] = _brightnessScale;
+        }
+
         if (_stateTopic.length() > 0) {
             entity[F("state_topic")] = _stateTopic;
         }
