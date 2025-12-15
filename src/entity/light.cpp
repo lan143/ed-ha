@@ -79,5 +79,13 @@ std::string EDHA::Light::marshalJSON()
         if (_colorTempValueTemplate.length() > 0) {
             entity[F("color_temp_value_template")] = _colorTempValueTemplate;
         }
+
+        if (_minKelvin != 0) {
+            entity[F("min_kelvin")] = _minKelvin;
+        }
+
+        if (_maxKelvin != 0) {
+            entity[F("max_kelvin")] = _maxKelvin;
+        }
     });
 }

@@ -130,6 +130,18 @@ namespace EDHA
             return this;
         }
 
+        Light* setMinKelvin(uint16_t minKelvin)
+        {
+            _minKelvin = minKelvin;
+            return this;
+        }
+
+        Light* setMaxKelvin(uint16_t maxKelvin)
+        {
+            _maxKelvin = maxKelvin;
+            return this;
+        }
+
     private:
         std::string _brightnessStateTopic = "";
         std::string _brightnessValueTemplate = "";
@@ -150,5 +162,7 @@ namespace EDHA
         bool _colorTempKelvin = false;
         std::string _colorTempStateTopic = "";
         std::string _colorTempValueTemplate = "";
+        uint16_t _minKelvin = 0;
+        uint16_t _maxKelvin = 0;
     };
 }
