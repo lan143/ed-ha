@@ -46,6 +46,14 @@ std::string EDHA::WaterHeater::marshalJSON()
             entity[F("temperature_command_topic")] = _temperatureCommandTopic;
         }
 
+        if (_temperatureStateTemplate.length() > 0) {
+            entity[F("temperature_state_template")] = _temperatureStateTemplate;
+        }
+
+        if (_temperatureStateTopic.length() > 0) {
+            entity[F("temperature_state_topic")] = _temperatureStateTopic;
+        }
+
         if (_modes.size() > 0) {
             JsonArray modes = entity.createNestedArray(F("modes"));
 

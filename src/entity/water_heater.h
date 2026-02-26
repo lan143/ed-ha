@@ -78,6 +78,18 @@ namespace EDHA
             _temperatureCommandTopic = temperatureCommandTopic;
             return this;
         }
+
+        WaterHeater* setTemperatureStateTemplate(std::string temperatureStateTemplate)
+        {
+            _temperatureStateTemplate = temperatureStateTemplate;
+            return this;
+        }
+    
+        WaterHeater* setTemperatureStateTopic(std::string temperatureStateTopic)
+        {
+            _temperatureStateTopic = temperatureStateTopic;
+            return this;
+        }
     
         WaterHeater* setModes(std::list<Mode> modes)
         {
@@ -108,6 +120,8 @@ namespace EDHA
         float _maxTemp = 0.0f;
         std::string _temperatureCommandTemplate = "";
         std::string _temperatureCommandTopic = "";
+        std::string _temperatureStateTemplate = "";
+        std::string _temperatureStateTopic = "";
         std::list<Mode> _modes;
         int _initial = 0;
         float _precision = 0.0f;
