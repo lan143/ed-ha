@@ -53,20 +53,31 @@ void setup() {
           ->setName("Living Room Sensor")
           ->setManufacturer("My Company");
 
-    // Add entities
-    auto sensor = discoveryMgr.addSensor(
+    // Add sensor with state topic and unit of measurement
+    auto temperatureSensor = discoveryMgr.addSensor(
         device,
         "Temperature",      // Name
         "temp_sensor",      // Object ID
         "temp_01"           // Unique ID
     );
     
-    auto switchEntity = discoveryMgr.addSwitch(
+    temperatureSensor->setStateTopic("mydevice/sensors/temperature")
+                      ->setUnitOfMeasurement("°C")
+                      ->setDeviceClass("temperature")
+                      ->setSensorStateClass(EDHA::SENSOR_STATE_CLASS_MEASUREMENT);
+    
+    // Add switch with command and state topics
+    auto relaySwitch = discoveryMgr.addSwitch(
         device,
         "Relay Switch",     // Name
         "relay_switch",     // Object ID
         "switch_01"         // Unique ID
     );
+    
+    relaySwitch->setCommandTopic("mydevice/switches/relay/command")
+               ->setStateTopic("mydevice/switches/relay/state")
+               ->setPayloadOn("ON")
+               ->setPayloadOff("OFF");
 }
 
 void loop() {
